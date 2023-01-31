@@ -1,0 +1,25 @@
+{
+  "data": [
+    {
+      "id": "mirfanh",
+      "name": "Irfan Hilmi",
+      "restaurant": "Rumah si Mbok",
+      "rate": 5,
+      "comment": "Gile... mantep sih menunya, kalo ke Pekalongan wajib mampir sini dulu"
+    },
+    {
+      "id": "yoxdaniel",
+      "name": "Yoga Daniel",
+      "restaurant": "Rumah si Mbok",
+      "rate": 5,
+      "comment": "Bener kata temen gw. Menunya bikin ngiler😋. Milenial kudu kenal sama makanan beginian"
+    },
+    {
+      "id": "soniaaa_",
+      "name": "Sonia",
+      "restaurant": "Altair Caffe",
+      "rate": 5,
+      "comment": "Resto andalan buat ngerjain tugas. Tempat nyaman, menu menyehatkan."
+    }
+  ]
+}

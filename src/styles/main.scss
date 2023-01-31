@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+$primary-color: #ffa53f;
+$secondary-color: #29303a;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 100%;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+#skiplink {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: 8px;
+  background-color: #bf1722;
+  color: white;
+  z-index: 100;
+
+  &:focus {
+    top: 0
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  > :not(#hero) {
+    padding: 0 10%;
+  }
+
+  >h2 {
+    text-align: center;
+    margin: 48px 0 10px 0;
+    padding: 0;
+    color: $secondary-color;
+  }
+}
+
+#hero {
+  background-image: url("../public/images/heros/hero-image_4.jpg");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 24px;
+  width: 100%;
+
+  >p {
+    font-size: 1.5em;
+  }
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 3em;
+  margin: 0;
+}
+
+h2,
+h3 {
+
+  margin: 0;
+  line-height: 1.3;
+}
+
+nav {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 24px;
+  align-items: flex-start;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background: linear-gradient(to top, transparent, #272d35);
+
+  .open {
+    margin: 0;
+    position: absolute;
+    padding: 12px 24px;
+    border-radius: 14px;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    background: $primary-color;
+    color: $secondary-color;
+    font-weight: bold;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: fit-content;
+
+    >li {
+      width: 100%;
+    }
+  }
+}
+
+
+#logo {
+  font-weight: 800;
+  font-size: 1.3em;
+}
+
+#hamburger {
+  display: block;
+  border: 0;
+  background: transparent;
+  color: $primary-color;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+ul {
+  display: none;
+  flex-direction: row;
+  gap: 20px;
+  padding: 24px;
+}
+
+
+
+li {
+  display: inline-block;
+  padding: 16px 5px;
+
+  >a {
+    color: white;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: 2px solid $primary-color;
+  }
+}
+
+hr {
+  text-align: center;
+}
+
+section {
+  margin: 20px 0 100px 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 24px;
+}
+
+.card {
+  max-height: fit-content;
+  color: $primary-color;
+  background: $secondary-color;
+  border-radius: 12px;
+  border: 0;
+  padding: 0;
+  font-family: 'Nanum Gothic', sans-serif;
+  text-align: left;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  user-select: none;
+
+  &:focus {
+    outline: 3px solid $primary-color;
+  }
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+.card-header {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  border-radius: 12px;
+}
+
+.card-title {
+  padding: 10px 20px 0 20px;
+  background: $secondary-color;
+
+  >h2 {
+    font-weight: 800;
+    color: white;
+  }
+}
+
+.card-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-description {
+  padding: 0 20px 20px 20px;
+  color: white;
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  background: lighten($primary-color, 30);
+  color: $secondary-color;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+
+  >img {
+    height: 45px;
+    border-radius: 50%;
+  }
+
+  >p {
+    margin: 0;
+    font-size: 0.86em;
+
+    >a {
+      color: $secondary-color;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+  }
+}
+
+.review-content {
+  line-height: 1.4;
+}
+
+footer {
+  max-width: 100%;
+  background: $primary-color;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 480px) {
+  #hamburger {
+    display: none;
+  }
+
+  nav {
+    align-items: center;
+  }
+
+
+  ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 30px;
+  }
+
+  section {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media screen and (min-width: 1000px) {
+
+  section {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  #hero {
+    padding: 0 10%;
+  }
+}
