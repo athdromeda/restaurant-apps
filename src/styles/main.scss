@@ -86,7 +86,7 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 24px 24px;
-  align-items: flex-start;
+  align-items: center;
   position: absolute;
   top: 0;
   width: 100%;
@@ -128,6 +128,7 @@ nav {
   color: $primary-color;
   font-size: 1.5em;
   cursor: pointer;
+  padding: 10px 12px;
 }
 
 ul {
@@ -141,11 +142,11 @@ ul {
 
 li {
   display: inline-block;
-  padding: 16px 5px;
-
+  
   >a {
     color: white;
     text-decoration: none;
+    padding: 16px 5px;
   }
 
   &:focus {
@@ -254,6 +255,7 @@ section {
       color: $secondary-color;
       text-decoration: none;
       font-weight: bold;
+      padding: 15px 0;
     }
 
   }
