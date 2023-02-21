@@ -16,6 +16,15 @@ body {
   gap: 10px;
   max-width: 100%;
   font-family: 'Nanum Gothic', sans-serif;
+  overflow: hidden;
+
+  -moz-animation: showOverflow 0s ease-in 3s forwards;
+  -webkit-animation: showOverflow 0s ease-in 3s forwards;
+  -o-animation: showOverflow 0s ease-in 3s forwards;
+  animation: showOverflow 0s ease-in 3s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
 }
 
 #skiplink {
@@ -37,6 +46,7 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  min-height: 100vh;
 
   > :not(#hero) {
     padding: 0 10%;
@@ -91,7 +101,7 @@ nav {
   top: 0;
   width: 100%;
   z-index: 10;
-  background: linear-gradient(to top, transparent, #272d35);
+  background: #272d35;
 
   .open {
     margin: 0;
@@ -142,7 +152,7 @@ ul {
 
 li {
   display: inline-block;
-  
+
   >a {
     color: white;
     text-decoration: none;
@@ -265,6 +275,94 @@ section {
   line-height: 1.4;
 }
 
+#headline {
+  width: 100%;
+}
+
+#add-review {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 100px;
+  gap: 5px;
+
+  >input {
+    height: 45px;
+    padding: 4px 8px;
+    font-family: 'Nanum Gothic', sans-serif;
+  }
+
+  >textarea {
+    padding: 4px 8px;
+    height: 200px;
+    font-family: 'Nanum Gothic', sans-serif;
+  }
+  
+  >button {
+    height: 45px;
+    padding: 4px 8px;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: bold;
+    color: $primary-color;
+    background: $secondary-color;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+}
+
+#like {
+  border: 0;
+  height: 60px;
+  width: 60px;
+  font-size: 2em;
+  position: fixed;
+  padding: 0 !important;
+  border-radius: 50%;
+  background: $primary-color;
+  bottom: 50px;
+  right: 50px;
+  cursor: pointer;
+}
+
+.liked-button {
+  color: white;
+}
+
+.liked {
+  color: rgb(255, 28, 104);
+}
+
+.detail {
+  margin-top: 140px;
+
+  >h1 {
+    font-size: 2.4em;
+  }
+
+  >.tags {
+    display: flex;
+
+    >div {
+      background: $primary-color;
+      color: $secondary-color;
+      padding: 4px 8px;
+      border-radius: 4px;
+      margin: 5px 4px 20px 0;
+    }
+  }
+
+  >p {
+    font-size: 1.1em;
+
+    &:first-of-type {
+      text-indent: 50px;
+
+    }
+  }
+}
+
 footer {
   max-width: 100%;
   background: $primary-color;
@@ -272,6 +370,78 @@ footer {
   justify-content: center;
   padding: 30px;
   font-weight: bold;
+}
+
+#splash-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: $secondary-color;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  z-index: 20;
+
+  -moz-animation: hideSplashScreen 0s ease-in 3s forwards;
+  -webkit-animation: hideSplashScreen 0s ease-in 3s forwards;
+  -o-animation: hideSplashScreen 0s ease-in 3s forwards;
+  animation: hideSplashScreen 0s ease-in 3s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  >img {
+    margin: 0 auto;
+    margin-top: 200px;
+  }
+}
+
+#favorite-page {
+  margin-top: 170px;
+  font-size: 1.7em;
+}
+
+@keyframes hideSplashScreen {
+  to {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+@keyframes showOverflow {
+  to {
+    overflow: auto;
+  }
+}
+
+#loading-icon {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+
+  &:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid $primary-color;
+    border-color: $primary-color transparent $primary-color transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media screen and (min-width: 480px) {

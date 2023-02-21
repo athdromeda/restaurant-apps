@@ -3,9 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="./app.webmanifest">
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    <meta name="theme-color" content="#29303A"/>
+    <script src="https://use.fontawesome.com/b070c8f1df.js"></script>
     <title>Restaurant Apps Starter Project</title>
   </head>
   <body>
+    <div id="splash-screen">
+      <img src="/icons/icon-192x192.png" alt="" srcset="">
+      <div id="loading-icon"></div>
+    </div>
     <a href="#maincontent" id="skiplink">Langsung ke konten</a>
     <nav>
       <div id="logo">CariResto</div>
@@ -15,31 +23,14 @@
           <a tabindex="0" href="/">Home</a>
         </li>
         <li>
-          <a tabindex="0" href="#">Favorit</a>
-        </li=>
+          <a tabindex="0" href="#/favorite">Favorit</a>
+        </li>
         <li>
           <a tabindex="0" href="https://github.com/athdromeda">About Us</a>
         </li>
       </ul>
     </nav>
     <main>
-      <div id="hero">
-        <div>
-          <h1>Temukan Resto Terbaik di Kotamu!</h1>
-          <p>
-            <b>CariResto</b> memberikanmu rekomendasi restoran yang worth it untuk kamu
-            coba
-          </p>
-        </div>
-      </div>
-      <h2>Sedang Hits</h2>
-      <hr>
-      <section id="maincontent">
-      </section>
-      <h2>Review Terbaru</h2>
-      <hr>
-      <section id="latest-reviews">
-      </section>
     </main>
     <footer>CariResto © 2023</footer>
   </body>
