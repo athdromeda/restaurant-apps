@@ -6,7 +6,7 @@ import handlePostReview from '../../utils/post-review';
 const Detail = {
   async render() {
     return `
-  <div id="maincontent" class="detail">
+  <div id="maincontent" tabindex="0" class="detail">
       <div id="loading-data-icon"></div>
   </div>
   <h2>Review Terbaru</h2>

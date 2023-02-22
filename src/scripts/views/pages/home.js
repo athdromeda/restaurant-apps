@@ -13,7 +13,7 @@ const Home = {
   </div>
   <h2>Sedang Hits</h2>
   <hr />
-  <section id="maincontent">
+  <section id="maincontent" tabindex="0">
   <div id="loading-data-icon"></div>
   </section>
   `;
