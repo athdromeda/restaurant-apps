@@ -16,7 +16,7 @@ class CardComponent extends HTMLElement {
     card.setAttribute('href', `/#/detail/${this.id}`);
     card.setAttribute('tabindex', '0');
     card.innerHTML = `
-          <img class="card-img" src="https://restaurant-api.dicoding.dev/images/small/${this.pictureId}" alt="${this.name},${this.city}" >
+          <img class="lazyload card-img" data-src="https://restaurant-api.dicoding.dev/images/small/${this.pictureId}" alt="${this.name},${this.city}" >
           `;
 
     const cardHeader = document.createElement('div');
