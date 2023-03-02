@@ -1,5 +1,7 @@
 const { merge } = require('webpack-merge');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
@@ -19,12 +21,19 @@ module.exports = merge(common, {
           },
         ],
       },
+      {
+        test: /.s?css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+      },
     ],
   },
-  plugins: [new BundleAnalyzerPlugin({
-    analyzerMode: 'static',
-    openAnalyzer: false,
-  })],
+  plugins: [
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,
+    }),
+    new MiniCssExtractPlugin(),
+  ],
   optimization: {
     splitChunks: {
       chunks: 'all',
@@ -47,5 +56,8 @@ module.exports = merge(common, {
         },
       },
     },
+    minimizer: [
+      new CssMinimizerPlugin(),
+    ],
   },
 });
