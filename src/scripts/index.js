@@ -2,6 +2,8 @@ import 'regenerator-runtime';
 import '../styles/main.scss';
 import swRegister from './utils/sw-register';
 import App from './views/app';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import CardComponent from './views/components/card-component';
 import ReviewContainer from './views/components/review-container';
 import DetailContainer from './views/components/detail-container';
