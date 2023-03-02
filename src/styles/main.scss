@@ -384,10 +384,10 @@ footer {
   justify-self: center;
   z-index: 20;
 
-  -moz-animation: hideSplashScreen 0s ease-in 3s forwards;
-  -webkit-animation: hideSplashScreen 0s ease-in 3s forwards;
-  -o-animation: hideSplashScreen 0s ease-in 3s forwards;
-  animation: hideSplashScreen 0s ease-in 3s forwards;
+  -moz-animation: hideSplashScreen 0s ease-in 1s forwards;
+  -webkit-animation: hideSplashScreen 0s ease-in 1s forwards;
+  -o-animation: hideSplashScreen 0s ease-in 1s forwards;
+  animation: hideSplashScreen 0s ease-in 1s forwards;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 
