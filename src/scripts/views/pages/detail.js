@@ -13,13 +13,6 @@ const Detail = {
   <hr />
   <section id="reviews"></section>
   <hr />
-  <h2>Add Review</h2>
-  <div id="add-review">
-    <input id="reviewer"/>
-    <textarea id="review-content"></textarea>
-    <button id="post-review">Submit</button>
-  </div>
-  <div id="likeButtonContainer"></div>
   `;
   },
   // <button id="likeButton" class="like-button" aria-label="like this movie">❤</button>
@@ -27,7 +20,16 @@ const Detail = {
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const mainSection = document.getElementById('maincontent');
+    const mainDocument = document.querySelector('main');
     const reviewSection = document.getElementById('reviews');
+    const likeButtonContainer = '<div id="likeButtonContainer"></div>';
+    const addReviewSection = `
+    <h2>Add Review</h2>
+    <div id="add-review">
+      <input id="reviewer"/>
+      <textarea id="review-content"></textarea>
+      <button id="post-review">Submit</button>
+    </div>`;
 
     try {
       const restaurant = await RestaurantsDB.restaurantDetail(url.id);
@@ -36,6 +38,14 @@ const Detail = {
       const detail = document.createElement('detail-container');
       detail.setAttribute('data', JSON.stringify(data));
       mainSection.appendChild(detail);
+
+      mainDocument.insertAdjacentHTML(
+        'beforeend',
+        addReviewSection + likeButtonContainer,
+      );
+
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
 
       data.customerReviews.forEach((review) => {
         const card = document.createElement('review-container');

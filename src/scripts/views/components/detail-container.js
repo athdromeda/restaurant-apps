@@ -14,6 +14,7 @@ class DetailContainer extends HTMLElement {
     <style>
     .detail {
       margin-top: 140px;
+      min-height: 1vh;
     }
     
     h1 {

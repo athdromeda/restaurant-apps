@@ -18,10 +18,10 @@ body {
   font-family: 'Nanum Gothic', sans-serif;
   overflow: hidden;
 
-  -moz-animation: showOverflow 0s ease-in 3s forwards;
-  -webkit-animation: showOverflow 0s ease-in 3s forwards;
-  -o-animation: showOverflow 0s ease-in 3s forwards;
-  animation: showOverflow 0s ease-in 3s forwards;
+  -moz-animation: showOverflow 0s ease-in 1s forwards;
+  -webkit-animation: showOverflow 0s ease-in 1s forwards;
+  -o-animation: showOverflow 0s ease-in 1s forwards;
+  animation: showOverflow 0s ease-in 1s forwards;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 
@@ -340,6 +340,7 @@ section {
 
 .detail {
   margin-top: 140px;
+  min-height: 1vh;
 
   >h1 {
     font-size: 2.4em;
