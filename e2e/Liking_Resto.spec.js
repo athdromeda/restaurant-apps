@@ -19,8 +19,8 @@ Scenario('Liking and unlike a resto', async ({ I }) => {
 
   I.click(locate('.card').first());
 
-  I.seeElement('#like');
-  I.click('#like');
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
 
   I.amOnPage('/#/favorite');
   await delay(5000);

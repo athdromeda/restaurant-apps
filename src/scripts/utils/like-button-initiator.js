@@ -1,36 +1,48 @@
+/* eslint-disable operator-linebreak */
 import FavoriteRestoIdb from '../data/favorite-resto-idb';
 
 const LikeButtonInitiator = {
   async init(resto) {
     this._resto = resto;
-    console.log(resto);
 
-    this._handleClick();
+    await this._renderButton();
   },
 
-  _handleClick() {
+  async _renderButton() {
     const { id } = this._resto;
-    const likeButton = document.querySelector('#like');
+    if (await this._isRestoExist(id)) {
+      this._renderUnlikeButton();
+    } else {
+      this._renderLikeButton();
+    }
+  },
+
+  _renderLikeButton() {
+    document.getElementById('likeButtonContainer').innerHTML =
+      '<button id="likeButton" class="like-button" aria-label="like this resto">❤</button>';
+    const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
-      if (await this._isRestoExist(id)) {
-        this._deleteResto();
-        likeButton.classList.remove('liked');
-      } else {
-        this._addResto();
-        likeButton.classList.add('liked');
-      }
+      this._addResto();
+      this._renderButton();
+    });
+  },
+
+  _renderUnlikeButton() {
+    document.getElementById('likeButtonContainer').innerHTML =
+      '<button id="likeButton" class="like-button liked" aria-label="unlike this resto">❤</button>';
+    const likeButton = document.querySelector('#likeButton');
+    likeButton.addEventListener('click', async () => {
+      this._deleteResto();
+      this._renderButton();
     });
   },
 
   async _addResto() {
     await FavoriteRestoIdb.putResto(this._resto);
-    console.log(`ALERT!: ${this._resto} added to favorite!`);
   },
 
   async _deleteResto() {
     await FavoriteRestoIdb.deleteResto(this._resto.id);
-    console.log(`ALERT!: ${this._resto} was removed to favorite!`);
-    console.log(await FavoriteRestoIdb.getAllRestos());
   },
 
   async _isRestoExist(id) {

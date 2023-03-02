@@ -19,9 +19,10 @@ const Detail = {
     <textarea id="review-content"></textarea>
     <button id="post-review">Submit</button>
   </div>
-  <button id="like" class="like-button">❤</button>
+  <div id="likeButtonContainer"></div>
   `;
   },
+  // <button id="likeButton" class="like-button" aria-label="like this movie">❤</button>
 
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
