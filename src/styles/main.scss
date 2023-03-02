@@ -324,6 +324,10 @@ section {
   bottom: 50px;
   right: 50px;
   cursor: pointer;
+
+  >#likeSvg {
+    margin-top: 10px;
+  }
 }
 
 .liked-button {
@@ -394,6 +398,8 @@ footer {
   >img {
     margin: 0 auto;
     margin-top: 200px;
+    width: 192px;
+    height: 192px;
   }
 }
 

@@ -1,5 +1,6 @@
 /* eslint-disable operator-linebreak */
 import FavoriteRestoIdb from '../data/favorite-resto-idb';
+import LikeButtonSvg from '../views/components/like-button-svg';
 
 const LikeButtonInitiator = {
   async init(resto) {
@@ -19,7 +20,8 @@ const LikeButtonInitiator = {
 
   _renderLikeButton() {
     document.getElementById('likeButtonContainer').innerHTML =
-      '<button id="likeButton" class="like-button" aria-label="like this resto">❤</button>';
+      `<button id="likeButton" class="like-button" aria-label="like this resto">${LikeButtonSvg('black')}</button>`;
+    // `<button id="likeButton" class="like-button" aria-label="like this resto">❤</button>`;
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
       this._addResto();
@@ -29,7 +31,9 @@ const LikeButtonInitiator = {
 
   _renderUnlikeButton() {
     document.getElementById('likeButtonContainer').innerHTML =
-      '<button id="likeButton" class="like-button liked" aria-label="unlike this resto">❤</button>';
+    `<button id="likeButton" class="like-button" aria-label="like this resto">${LikeButtonSvg('#ff1c68')}</button>`;
+    // eslint-disable-next-line max-len
+    // '<button id="likeButton" class="like-button liked" aria-label="unlike this resto">❤</button>';
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
       this._deleteResto();
