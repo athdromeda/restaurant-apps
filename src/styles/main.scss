@@ -297,7 +297,7 @@ section {
     height: 200px;
     font-family: 'Nanum Gothic', sans-serif;
   }
-  
+
   >button {
     height: 45px;
     padding: 4px 8px;
@@ -465,6 +465,9 @@ footer {
     grid-template-columns: 1fr 1fr;
   }
 
+  #hero {
+    background-image: url("../public/images/heros/hero-image-large.jpg");
+  }
 }
 
 @media screen and (min-width: 1000px) {
@@ -475,5 +478,6 @@ footer {
 
   #hero {
     padding: 0 10%;
+    background-image: url("../public/images/heros/hero-image-large.jpg");
   }
 }
