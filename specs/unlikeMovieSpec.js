@@ -11,6 +11,10 @@ describe('Unliking a resto =>', () => {
     await FavoriteRestoIdb.putResto({ id: 1 });
   });
 
+  afterEach(async () => {
+    await FavoriteRestoIdb.deleteResto(1);
+  });
+
   it('Should show unlike button if the resto has been liked', async () => {
     await LikeButtonInitiator.init({ id: 1 });
 
@@ -18,10 +22,10 @@ describe('Unliking a resto =>', () => {
       document.querySelector('[aria-label="unlike this resto"]')
     ).toBeTruthy();
   });
-  
+
   it('should be able to unlike resto', async () => {
     await LikeButtonInitiator.init({ id: 1 });
-    
+
     document
       .querySelector('[aria-label="unlike this resto"]')
       .dispatchEvent(new Event('click'));

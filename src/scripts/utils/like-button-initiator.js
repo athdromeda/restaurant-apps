@@ -31,7 +31,7 @@ const LikeButtonInitiator = {
 
   _renderUnlikeButton() {
     document.getElementById('likeButtonContainer').innerHTML =
-    `<button id="likeButton" class="like-button" aria-label="like this resto">${LikeButtonSvg('#ff1c68')}</button>`;
+    `<button id="likeButton" class="like-button" aria-label="unlike this resto">${LikeButtonSvg('#ff1c68')}</button>`;
     // eslint-disable-next-line max-len
     // '<button id="likeButton" class="like-button liked" aria-label="unlike this resto">❤</button>';
     const likeButton = document.querySelector('#likeButton');
