@@ -36,10 +36,6 @@ class DetailContainer extends HTMLElement {
     p {
       font-size: 1.1em;
     }
-  
-    p:first-of-type {
-        text-indent: 50px;
-    }
     </style>
 
     <h1>${this.parsedData.name}</h1>
